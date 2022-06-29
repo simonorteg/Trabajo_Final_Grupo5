@@ -20,7 +20,7 @@ public class ContratoAlquiler {
     LocalDate fecha_Inicio;
     LocalDate fecha_Final;
     LocalDate fechaRealizacion;
-    //boolean vigente;           // No esta en el uml pero me parece que va a haver falta
+    //boolean vigente;           // No esta en el uml pero me parece que va a hacer falta
     
     public ContratoAlquiler(int codContrato, String vendedor, char marca, Propiedad_Inmueble propiedad, Inquilino inquilino, LocalDate fecha_Inicio, LocalDate fecha_Final, LocalDate fechaRealizacion) {
         this.codContrato = codContrato;
