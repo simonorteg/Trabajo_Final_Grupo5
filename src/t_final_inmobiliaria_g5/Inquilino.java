@@ -19,25 +19,25 @@ class Inquilino {
     String nombre;
     char tipo;
     char detalle;
-    ArrayList<Propiedad_Inmueble> inmuebles;
+    
 
-    public Inquilino(int idInquilino, int DNI, String apellido, String nombre, char tipo, char detalle, ArrayList<Propiedad_Inmueble> inmuebles) {
+    public Inquilino(int idInquilino, int DNI, String apellido, String nombre, char tipo, char detalle) {
         this.idInquilino = idInquilino;
         this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
         this.tipo = tipo;
         this.detalle = detalle;
-        this.inmuebles = inmuebles;
+        
     }
 
-    public Inquilino(int DNI, String apellido, String nombre, char tipo, char detalle, ArrayList<Propiedad_Inmueble> inmuebles) {
+    public Inquilino(int DNI, String apellido, String nombre, char tipo, char detalle) {
         this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
         this.tipo = tipo;
         this.detalle = detalle;
-        this.inmuebles = inmuebles;
+       
     }
 
     public Inquilino() {
@@ -91,13 +91,6 @@ class Inquilino {
         this.detalle = detalle;
     }
 
-    public ArrayList<Propiedad_Inmueble> getInmuebles() {
-        return inmuebles;
-    }
-
-    public void setInmuebles(ArrayList<Propiedad_Inmueble> inmuebles) {
-        this.inmuebles = inmuebles;
-    }
     
     
     
