@@ -11,7 +11,7 @@ package t_final_inmobiliaria_g5;
  */
 public class Propiedad_Inmueble {
     
-  private  int idLocal;
+  private  int idPropiedad;
   private  String accesibilidad;
   private String caracteristicas;
   private  String direccion;
@@ -19,23 +19,23 @@ public class Propiedad_Inmueble {
   private  char estadoLocal;
   private  char tipoDeLocal;
  
-  private  int superficieMinima;
+  private  int superficie;
   private  String forma;
-  private  float precioTazado;
-// public Inspector revisor;      en el uml no existe la clase y en las cosnignas no figura revisor...preguntar porque esta el atriburo
+  private  double precioTazado;
+
     
    public Inquilino ocupante;
    public Propietario dueño;
 
     public Propiedad_Inmueble(int idLocal, String accesibilidad, String caracteristicas, String direccion, String zona, char estadoLocal, char tipoDeLocal, int superficieMinima, String forma, float precioTazado, Inquilino ocupante, Propietario dueño) {
-        this.idLocal = idLocal;
+        this.idPropiedad = idLocal;
         this.accesibilidad = accesibilidad;
         this.caracteristicas = caracteristicas;
         this.direccion = direccion;
         this.zona = zona;
         this.estadoLocal = estadoLocal;
         this.tipoDeLocal = tipoDeLocal;
-        this.superficieMinima = superficieMinima;
+        this.superficie = superficieMinima;
         this.forma = forma;
         this.precioTazado = precioTazado;
         this.ocupante = ocupante;
@@ -49,7 +49,7 @@ public class Propiedad_Inmueble {
         this.zona = zona;
         this.estadoLocal = estadoLocal;
         this.tipoDeLocal = tipoDeLocal;
-        this.superficieMinima = superficieMinima;
+        this.superficie = superficieMinima;
         this.forma = forma;
         this.precioTazado = precioTazado;
         this.ocupante = ocupante;
@@ -60,11 +60,11 @@ public class Propiedad_Inmueble {
     }
 
     public int getIdLocal() {
-        return idLocal;
+        return idPropiedad;
     }
 
     public void setIdLocal(int idLocal) {
-        this.idLocal = idLocal;
+        this.idPropiedad = idLocal;
     }
 
     public String getAccesibilidad() {
@@ -116,11 +116,11 @@ public class Propiedad_Inmueble {
     }
 
     public int getSuperficieMinima() {
-        return superficieMinima;
+        return superficie;
     }
 
     public void setSuperficieMinima(int superficieMinima) {
-        this.superficieMinima = superficieMinima;
+        this.superficie = superficieMinima;
     }
 
     public String getForma() {
@@ -131,7 +131,7 @@ public class Propiedad_Inmueble {
         this.forma = forma;
     }
 
-    public float getPrecioTazado() {
+    public double getPrecioTazado() {
         return precioTazado;
     }
 
