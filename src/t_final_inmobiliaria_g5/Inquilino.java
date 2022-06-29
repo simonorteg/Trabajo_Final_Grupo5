@@ -13,31 +13,31 @@ import java.util.ArrayList;
  */
 class Inquilino {
     
-    int idInquilino;
-    int DNI;
-    String apellido;
-    String nombre;
-    char tipo;
-    char detalle;
-    
+    private int idInquilino;
+    private long DNI;
+    private String apellido;
+    private String nombre;
+    private char tipo;
+    private char detalle;
+    public ArrayList<Propiedad_Inmueble> inmuebles;
 
-    public Inquilino(int idInquilino, int DNI, String apellido, String nombre, char tipo, char detalle) {
+    public Inquilino(int idInquilino, int DNI, String apellido, String nombre, char tipo, char detalle, ArrayList<Propiedad_Inmueble> inmuebles) {
         this.idInquilino = idInquilino;
         this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
         this.tipo = tipo;
         this.detalle = detalle;
-        
+        this.inmuebles = inmuebles;
     }
 
-    public Inquilino(int DNI, String apellido, String nombre, char tipo, char detalle) {
+    public Inquilino(int DNI, String apellido, String nombre, char tipo, char detalle, ArrayList<Propiedad_Inmueble> inmuebles) {
         this.DNI = DNI;
         this.apellido = apellido;
         this.nombre = nombre;
         this.tipo = tipo;
         this.detalle = detalle;
-       
+        this.inmuebles = inmuebles;
     }
 
     public Inquilino() {
@@ -51,7 +51,7 @@ class Inquilino {
         this.idInquilino = idInquilino;
     }
 
-    public int getDNI() {
+    public long getDNI() {
         return DNI;
     }
 
@@ -91,6 +91,13 @@ class Inquilino {
         this.detalle = detalle;
     }
 
+    public ArrayList<Propiedad_Inmueble> getInmuebles() {
+        return inmuebles;
+    }
+
+    public void setInmuebles(ArrayList<Propiedad_Inmueble> inmuebles) {
+        this.inmuebles = inmuebles;
+    }
     
     
     

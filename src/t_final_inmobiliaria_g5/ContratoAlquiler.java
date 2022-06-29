@@ -12,14 +12,14 @@ import java.time.LocalDate;
  * @author mseba
  */
 public class ContratoAlquiler {
-    int codContrato;
-    String vendedor;
-    char marca;
-    Propiedad_Inmueble propiedad;
-    Inquilino inquilino;
-    LocalDate fecha_Inicio;
-    LocalDate fecha_Final;
-    LocalDate fechaRealizacion;
+    private int codContrato;
+    private String vendedor;
+    private char marca;
+    public Propiedad_Inmueble propiedad;
+    public Inquilino inquilino;
+    private LocalDate fecha_Inicio;
+    private LocalDate fecha_Final;
+    private LocalDate fechaRealizacion;
     //boolean vigente;           // No esta en el uml pero me parece que va a hacer falta
     
     public ContratoAlquiler(int codContrato, String vendedor, char marca, Propiedad_Inmueble propiedad, Inquilino inquilino, LocalDate fecha_Inicio, LocalDate fecha_Final, LocalDate fechaRealizacion) {
