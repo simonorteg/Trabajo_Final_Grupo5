@@ -116,5 +116,44 @@ public class Propiedad_Inmueble_Data {
             return disponibles;
         }
         
+        public ArrayList<Propiedad_Inmueble> buscarInmPorCaract(String uso, String zona, String supMinima, String precioMaximo){
+            ArrayList<Propiedad_Inmueble> disponibles = new ArrayList<>();
+            try {
+                Double.parseDouble(supMinima);
+            } catch (NumberFormatException ex ) {
+                supMinima ="0";
+            }
+            try {
+                Double.parseDouble(precioMaximo);
+            } catch (NumberFormatException ex ) {
+                precioMaximo ="999999999999999999999999999";
+            }
+            
+             String sql = "SELECT * FROM propiedad_inmueble WHERE zona = \""+zona+"\" AND tipo = \""+uso+"\" AND superficie > "+supMinima+ " AND precio < "+ precioMaximo ;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Propiedad_Inmueble prop = new Propiedad_Inmueble();
+                prop.setDireccion(rs.getString("direccion"));
+                prop.setDisponible(rs.getBoolean("disponible"));
+                prop.setIdPropiedad(rs.getInt("idPropiedad"));
+                prop.setPrecio(rs.getDouble("precio"));
+               // prop.setPropietario(buscarPropietarioPorID(rs.getInt("idPropietario")));
+                prop.setSuperficie(rs.getDouble("superficie"));
+                prop.setTipo(rs.getString("tipo"));
+                prop.setZona(rs.getString("zona"));
+                prop.setCodigo(rs.getString("codigo"));
+                disponibles.add(prop);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Propiedad_Inmueble_Data.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+            
+            
+            return disponibles;
+        }
     }
 

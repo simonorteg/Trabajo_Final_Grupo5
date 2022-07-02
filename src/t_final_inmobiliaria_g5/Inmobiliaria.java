@@ -36,7 +36,7 @@ public class Inmobiliaria {
 */
     
         ArrayList<Propiedad_Inmueble> disponibles = new ArrayList<>();
-               disponibles = pIm.buscarInmDisponibles();
+               disponibles = pIm.buscarInmPorCaract("V", "SUR", "1", "800");
                
                for (Propiedad_Inmueble disponible : disponibles) {
                    System.out.println(disponible.getCodigo());
