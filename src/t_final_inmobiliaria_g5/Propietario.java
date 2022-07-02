@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author mseba
  */
-class Propietario {
+public class Propietario {
    private int idPropietario;
    private long DNI;
    private int telefono;
@@ -20,7 +20,7 @@ class Propietario {
    private String domicilio;
    public ArrayList<Propiedad_Inmueble> propiedades;
 
-    public Propietario(int idPropietario, int DNI, int telefono, String apellidoPropietario, String nombrePropietario, String domicilio, ArrayList<Propiedad_Inmueble> propiedades) {
+    public Propietario(int idPropietario, long DNI, int telefono, String apellidoPropietario, String nombrePropietario, String domicilio, ArrayList<Propiedad_Inmueble> propiedades) {
         this.idPropietario = idPropietario;
         this.DNI = DNI;
         this.telefono = telefono;
@@ -30,7 +30,7 @@ class Propietario {
         this.propiedades = propiedades;
     }
 
-    public Propietario(int DNI, int telefono, String apellidoPropietario, String nombrePropietario, String domicilio, ArrayList<Propiedad_Inmueble> propiedades) {
+    public Propietario(long DNI, int telefono, String apellidoPropietario, String nombrePropietario, String domicilio, ArrayList<Propiedad_Inmueble> propiedades) {
         this.DNI = DNI;
         this.telefono = telefono;
         this.apellidoPropietario = apellidoPropietario;
@@ -54,7 +54,7 @@ class Propietario {
         return DNI;
     }
 
-    public void setDNI(int DNI) {
+    public void setDNI(long DNI) {
         this.DNI = DNI;
     }
 
