@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author mseba
  */
-class Propietario {
+public class Propietario {
    private int idPropietario;
    private long DNI;
    private int telefono;

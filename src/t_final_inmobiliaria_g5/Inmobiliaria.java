@@ -6,7 +6,9 @@
 package t_final_inmobiliaria_g5;
 
 import conexion.Conexion;
+import inmo_data.InquilinoData;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +22,12 @@ public class Inmobiliaria {
     public static void main(String[] args) {
         // TODO code application logic here
          Conexion conexion = new Conexion();          
-        Connection cn = conexion.getConexion();     
+        Connection cn = conexion.getConexion();  
+        
+               
     }
+    
+    
+    
     
 }
