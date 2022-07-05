@@ -165,7 +165,7 @@ public class InquilinoData {
             Propiedad_Inmueble propiedad;
             while(rs.next()){
                 propiedad = new Propiedad_Inmueble(); 
-                propiedad.setIdLocal(rs.getInt("idPropiedad"));
+                propiedad.setIdPropiedad(rs.getInt("idPropiedad"));
             }
           
       } catch (SQLException e) {
