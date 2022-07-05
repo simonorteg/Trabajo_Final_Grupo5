@@ -12,83 +12,75 @@ package t_final_inmobiliaria_g5;
 public class Propiedad_Inmueble {
     
   private  int idPropiedad;
-  private  String accesibilidad;
-  private String caracteristicas;
+  private String codigo;
+   public Inquilino inquilino;
+   public Propietario propietario;
+  private String zona;
   private  String direccion;
-  private  String zona;
-  private  char estadoLocal;
-  private  char tipoDeLocal;
- 
-  private  int superficie;
-  private  String forma;
-  private  double precioTazado;
+  private double superficie;
+  private String tipo;
 
-    
-   public Inquilino ocupante;
-   public Propietario dueño;
+   
+  private double precio;
+  boolean disponible;
 
-    public Propiedad_Inmueble(int idLocal, String accesibilidad, String caracteristicas, String direccion, String zona, char estadoLocal, char tipoDeLocal, int superficieMinima, String forma, float precioTazado, Inquilino ocupante, Propietario dueño) {
-        this.idPropiedad = idLocal;
-        this.accesibilidad = accesibilidad;
-        this.caracteristicas = caracteristicas;
-        this.direccion = direccion;
+    public Propiedad_Inmueble(/*int idPropiedad,*/ Inquilino inquilino, Propietario propietario, String zona, String direccion, double superficie, String tipo, double precio, boolean disponible) {
+        //this.idPropiedad = idPropiedad;
+        this.inquilino = inquilino;
+        this.propietario = propietario;
         this.zona = zona;
-        this.estadoLocal = estadoLocal;
-        this.tipoDeLocal = tipoDeLocal;
-        this.superficie = superficieMinima;
-        this.forma = forma;
-        this.precioTazado = precioTazado;
-        this.ocupante = ocupante;
-        this.dueño = dueño;
+        this.direccion = direccion;
+        this.superficie = superficie;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.disponible = disponible;
+        this.codigo = tipo+idPropiedad;
     }
 
-    public Propiedad_Inmueble(String accesibilidad, String caracteristicas, String direccion, String zona, char estadoLocal, char tipoDeLocal, int superficieMinima, String forma, float precioTazado, Inquilino ocupante, Propietario dueño) {
-        this.accesibilidad = accesibilidad;
-        this.caracteristicas = caracteristicas;
-        this.direccion = direccion;
+    public Propiedad_Inmueble(Propietario propietario, String zona, String direccion, double superficie, String tipo, double precio, boolean disponible) {
+       
+        this.propietario = propietario;
         this.zona = zona;
-        this.estadoLocal = estadoLocal;
-        this.tipoDeLocal = tipoDeLocal;
-        this.superficie = superficieMinima;
-        this.forma = forma;
-        this.precioTazado = precioTazado;
-        this.ocupante = ocupante;
-        this.dueño = dueño;
+        this.direccion = direccion;
+        this.superficie = superficie;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.disponible = disponible;
     }
 
     public Propiedad_Inmueble() {
     }
 
-    public int getIdLocal() {
+    public int getIdPropiedad() {
         return idPropiedad;
     }
 
-    public void setIdLocal(int idLocal) {
-        this.idPropiedad = idLocal;
+    public void setIdPropiedad(int idPropiedad) {
+        this.idPropiedad = idPropiedad;
     }
 
-    public String getAccesibilidad() {
-        return accesibilidad;
+    public String getCodigo() {
+        return codigo;
+    }
+     public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public void setAccesibilidad(String accesibilidad) {
-        this.accesibilidad = accesibilidad;
+    
+    public Inquilino getInquilino() {
+        return inquilino;
     }
 
-    public String getCaracteristicas() {
-        return caracteristicas;
+    public void setInquilino(Inquilino inquilino) {
+        this.inquilino = inquilino;
     }
 
-    public void setCaracteristicas(String caracteristicas) {
-        this.caracteristicas = caracteristicas;
+    public Propietario getPropietario() {
+        return propietario;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
     }
 
     public String getZona() {
@@ -99,66 +91,47 @@ public class Propiedad_Inmueble {
         this.zona = zona;
     }
 
-    public char getEstadoLocal() {
-        return estadoLocal;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setEstadoLocal(char estadoLocal) {
-        this.estadoLocal = estadoLocal;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public char getTipoDeLocal() {
-        return tipoDeLocal;
-    }
-
-    public void setTipoDeLocal(char tipoDeLocal) {
-        this.tipoDeLocal = tipoDeLocal;
-    }
-
-    public int getSuperficieMinima() {
+    public double getSuperficie() {
         return superficie;
     }
 
-    public void setSuperficieMinima(int superficieMinima) {
-        this.superficie = superficieMinima;
+    public void setSuperficie(double superficie) {
+        this.superficie = superficie;
+    }
+    public String getTipo() {
+        return tipo;
     }
 
-    public String getForma() {
-        return forma;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public void setForma(String forma) {
-        this.forma = forma;
+    public double getPrecio() {
+        return precio;
     }
 
-    public double getPrecioTazado() {
-        return precioTazado;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public void setPrecioTazado(float precioTazado) {
-        this.precioTazado = precioTazado;
+    public boolean isDisponible() {
+        return disponible;
     }
 
-    public Inquilino getOcupante() {
-        return ocupante;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
+  
 
-    public void setOcupante(Inquilino ocupante) {
-        this.ocupante = ocupante;
-    }
-
-    public Propietario getDueño() {
-        return dueño;
-    }
-
-    public void setDueño(Propietario dueño) {
-        this.dueño = dueño;
-    }
-    
-    
    
-    
-    
 }
 
 
