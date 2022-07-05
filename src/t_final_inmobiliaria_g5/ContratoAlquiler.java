@@ -13,47 +13,41 @@ import java.time.LocalDate;
  */
 public class ContratoAlquiler {
     private int idContrato;
-    private int codContrato;
+    private String codContrato;
     private String vendedor;
-    private char marca;
     public Propiedad_Inmueble propiedad;
     public Inquilino inquilino;
     private LocalDate fecha_Inicio;
     private LocalDate fecha_Final;
-
-    //boolean vigente;           // No esta en el uml pero me parece que va a hacer falta
+    boolean vigente;          
     
-    public ContratoAlquiler(int codContrato, String vendedor, char marca, Propiedad_Inmueble propiedad, Inquilino inquilino, LocalDate fecha_Inicio, LocalDate fecha_Final) {
+    public ContratoAlquiler(String codContrato, String vendedor, Propiedad_Inmueble propiedad, Inquilino inquilino, LocalDate fecha_Inicio, LocalDate fecha_Final) {
         this.codContrato = codContrato;
         this.vendedor = vendedor;
-        this.marca = marca;
         this.propiedad = propiedad;
         this.inquilino = inquilino;
         this.fecha_Inicio = fecha_Inicio;
-        this.fecha_Final = fecha_Final;
-       
-       // this.vigente = 8/si se usa atributo vigente
+       this.fecha_Final = fecha_Final;
+        this.vigente = (LocalDate.now().isBefore(this.fecha_Final)||LocalDate.now()==this.fecha_Final );  
     }
 
-    public ContratoAlquiler(String vendedor, char marca, Propiedad_Inmueble propiedad, Inquilino inquilino, LocalDate fecha_Inicio, LocalDate fecha_Final) {
+    public ContratoAlquiler(String vendedor, Propiedad_Inmueble propiedad, Inquilino inquilino/*, LocalDate fecha_Inicio, LocalDate fecha_Final*/) {
         this.vendedor = vendedor;
-        this.marca = marca;
         this.propiedad = propiedad;
         this.inquilino = inquilino;
         this.fecha_Inicio = fecha_Inicio;
         this.fecha_Final = fecha_Final;
-       
-        //this.vigente =  (LocalDate.now().isBefore(this.fecha_Final)||LocalDate.now()==this.fecha_Final );  // //si se usa atributo vigente
+        this.vigente =  (LocalDate.now().isBefore(this.fecha_Final)||LocalDate.now()==this.fecha_Final );  
     }
 
     public ContratoAlquiler() {
     }
 
-    public int getCodContrato() {
+    public String getCodContrato() {
         return codContrato;
     }
 
-    public void setCodContrato(int codContrato) {
+    public void setCodContrato(String codContrato) {
         this.codContrato = codContrato;
     }
 
@@ -65,15 +59,7 @@ public class ContratoAlquiler {
         this.vendedor = vendedor;
     }
 
-    public char getMarca() {
-        return marca;
-    }
-
-    public void setMarca(char marca) {
-        this.marca = marca;
-    }
-
-    public Propiedad_Inmueble getPropiedad() {
+   public Propiedad_Inmueble getPropiedad() {
         return propiedad;
     }
 
@@ -103,6 +89,22 @@ public class ContratoAlquiler {
 
     public void setFecha_Final(LocalDate fecha_Final) {
         this.fecha_Final = fecha_Final;
+    }
+
+    public int getIdContrato() {
+        return idContrato;
+    }
+
+    public void setIdContrato(int idContrato) {
+        this.idContrato = idContrato;
+    }
+
+    public boolean isVigente() {
+        return vigente;
+    }
+
+    public void setVigente(boolean vigente) {
+        this.vigente = vigente;
     }
 
    

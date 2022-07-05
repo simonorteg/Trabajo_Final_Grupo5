@@ -70,6 +70,7 @@ public class Propiedad_Inmueble_Data {
            if(rs.next()){
                int id= rs.getInt("idPropiedad");
               generadorCodigo += id;
+              propiedad.setIdPropiedad(id); //para pruebas de escritorio
            sql ="UPDATE `propiedad_inmueble` SET `codigo`='" +generadorCodigo +"' WHERE `idPropiedad`="+id ;
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
@@ -154,6 +155,38 @@ public class Propiedad_Inmueble_Data {
             
             
             return disponibles;
+        }
+        
+        public Propiedad_Inmueble buscarInmPorId(int id){
+            Propiedad_Inmueble inm = new Propiedad_Inmueble();
+            
+             String sql = "SELECT * FROM propiedad_inmueble WHERE idPropiedad = "+id; ;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+               
+                inm.setDireccion(rs.getString("direccion"));
+                inm.setDisponible(rs.getBoolean("disponible"));
+                inm.setIdPropiedad(rs.getInt("idPropiedad"));
+                inm.setPrecio(rs.getDouble("precio"));
+               // inm.setPropietario(buscarPropietarioPorID(rs.getInt("idPropietario")));
+                inm.setSuperficie(rs.getDouble("superficie"));
+                inm.setTipo(rs.getString("tipo"));
+                inm.setZona(rs.getString("zona"));
+                inm.setCodigo(rs.getString("codigo"));
+                
+            }
+            
+            ps.close();
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Propiedad_Inmueble_Data.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+            
+             return inm;
+           
         }
     }
 

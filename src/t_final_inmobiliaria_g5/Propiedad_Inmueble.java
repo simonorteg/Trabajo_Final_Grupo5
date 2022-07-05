@@ -24,8 +24,8 @@ public class Propiedad_Inmueble {
   private double precio;
   boolean disponible;
 
-    public Propiedad_Inmueble(int idPropiedad, Inquilino inquilino, Propietario propietario, String zona, String direccion, double superficie, String tipo, double precio, boolean disponible) {
-        this.idPropiedad = idPropiedad;
+    public Propiedad_Inmueble(/*int idPropiedad,*/ Inquilino inquilino, Propietario propietario, String zona, String direccion, double superficie, String tipo, double precio, boolean disponible) {
+        //this.idPropiedad = idPropiedad;
         this.inquilino = inquilino;
         this.propietario = propietario;
         this.zona = zona;
